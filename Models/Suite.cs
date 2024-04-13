@@ -6,6 +6,10 @@ namespace GerenciadorHotel.Models
 {
     class Suite
     {
+        public Suite()
+        {
+
+        }
         public Suite(string tipoSuite, int capacidade, decimal valorDiaria)
         {
             TipoSuite = tipoSuite;

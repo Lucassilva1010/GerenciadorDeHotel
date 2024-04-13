@@ -6,7 +6,16 @@ namespace GerenciadorHotel.Models
 {
     class Pessoa
     {
-        public int Nome { get; set; }
-        public int Sobrenome { get; set; }
+        public Pessoa()
+        {
+
+        }
+        public Pessoa(string nome, string sobrenome)
+        {
+            Nome = nome;
+            Sobrenome = sobrenome;
+        }
+        public string Nome { get; set; }
+        public string Sobrenome { get; set; }
     }
 }
