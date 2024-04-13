@@ -16,8 +16,6 @@ namespace GerenciadorHotel.Models
 
         public void CadastrarHospedes(List<Pessoa> hospedes, int capacidade)
         {
-
-
             if (hospedes.Count <= capacidade)
             {
                 Hospedes = hospedes;
@@ -27,14 +25,6 @@ namespace GerenciadorHotel.Models
                 Console.WriteLine($"Erro: O total de hospedes é maior que a quantidade suportada pela Suite: {Suite.TipoSuite} ");
 
             }
-
-
-
-
-
-
-
-
         }
 
         public void CadastrarSuite(Suite suite)
@@ -63,9 +53,10 @@ namespace GerenciadorHotel.Models
 
         }
 
-        public decimal CalcularValorDiaria()
+        public decimal CalcularValorDiaria(int diasReserva, decimal valorDiaria)
         {
-            return 0.0m;
+          
+            return valorDiaria * diasReserva;
         }
     }
 }

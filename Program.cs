@@ -23,7 +23,7 @@ namespace GerenciadorHotel
             Hospedes.Add(p3);
 
             //Definindo uma Suite
-            Suite suite = new Suite(tipoSuite: "Imperial", capacidade: 2, valorDiaria: 1.000m);
+            Suite suite = new Suite(tipoSuite: "Imperial", capacidade: 3, valorDiaria: 1000);
 
             //Definindo total de dias de reserva
             Reserva reserva = new Reserva(diasReserva: 10);
@@ -31,11 +31,12 @@ namespace GerenciadorHotel
             reserva.CadastrarSuite(suite);
             reserva.CadastrarHospedes(Hospedes, suite.Capacidade);
 
+            decimal valorTotalReserva = reserva.CalcularValorDiaria(reserva.DiasReserva, suite.ValorDiaria);
             //Exibir a quantidade de hospedes e valor das diarias atravez dos metodos
             if (reserva.ObterQuatidadeHospedes() > 0)
             {
                 Console.WriteLine($"Hospedes {reserva.ObterQuatidadeHospedes()}");
-                Console.WriteLine($"Valor da Diária {reserva.CalcularValorDiaria()}");
+                Console.WriteLine($"Valor da Diária {valorTotalReserva:c}");
 
             }
 
